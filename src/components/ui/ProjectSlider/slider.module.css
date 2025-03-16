@@ -1,0 +1,33 @@
+.sliderWrapper {
+  position: relative;
+  max-width: 300px; /* Ancho visible del slider */
+  overflow: hidden;
+}
+
+.sliderContainer {
+  display: flex;
+  width: max-content; /* Ajusta al contenido */
+}
+
+.slide {
+  width: 300px; /* Ancho fijo de cada slide */
+  height: 200px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  user-select: none; /* Evita selección de texto al arrastrar */
+}
+
+.controls {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+}

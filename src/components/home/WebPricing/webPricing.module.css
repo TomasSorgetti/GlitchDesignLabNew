@@ -1,0 +1,229 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
+  padding-top: 24rem;
+  background-image: url("../../../assets/images/web_pricing/bg.png");
+  background-size: contain;
+  background-position: left 0 top 0;
+  background-repeat: no-repeat;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  z-index: 3;
+}
+.content h2 {
+  font-size: 2.625rem;
+  text-transform: uppercase;
+}
+.content p {
+  max-width: 600px;
+}
+.cardsContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 3;
+}
+.cardsContainer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  max-width: 1200px;
+  height: 400px;
+  border-radius: 100%;
+  background: #a94ae836;
+  filter: blur(60px);
+  z-index: -1;
+}
+
+.background {
+  position: absolute;
+  top: 24rem;
+  width: 100%;
+}
+
+.sync_lines {
+  position: relative;
+  width: 100%;
+  height: 436px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #fff 15%,
+    #fff 85%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #fff 15%,
+    #fff 85%,
+    transparent 100%
+  );
+}
+
+.sync_line {
+  position: absolute;
+  background-size: cover;
+  width: 380px;
+  height: 380px;
+}
+.sync_line:nth-child(1) {
+  left: 2rem;
+  background-image: url("../../../assets/images/web_pricing/bg_left.png");
+}
+.sync_line:nth-child(2) {
+  right: 2rem;
+  background-image: url("../../../assets/images/web_pricing/bg_right.png");
+}
+.lazy_background_image_maskImage {
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+.sync_line:nth-child(1).lazy_background_image_maskImage {
+  -webkit-mask-image: url("../../../assets/images/web_pricing/bg_left.png");
+  mask-image: url("../../../assets/images/web_pricing/bg_left.png");
+}
+.sync_line:nth-child(2).lazy_background_image_maskImage {
+  -webkit-mask-image: url("../../../assets/images/web_pricing/bg_right.png");
+  mask-image: url("../../../assets/images/web_pricing/bg_right.png");
+}
+.lazy_background_image {
+  transition: 1s cubic-bezier(0.6, 0.6, 0, 1) opacity;
+}
+
+.sync_line div {
+  width: 400px;
+  height: 600px;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  animation: 12s linear infinite;
+  background: linear-gradient(
+    to bottom,
+    #00000018,
+    var(--color-primary),
+    var(--color-secondary),
+    #f469e11c
+  );
+}
+.sync_line:nth-child(1) div {
+  transform: translate(-400px, -500px) rotate(-45deg);
+  animation-name: sync_line_1 !important;
+}
+
+.sync_line:nth-child(2) div {
+  transform: translate(400px, -500px) rotate(45deg);
+  animation-name: sync_line_2 !important;
+  animation-delay: 6s;
+}
+
+@keyframes sync_line_1 {
+  0% {
+    transform: translate(-400px, -500px) rotate(-45deg);
+  }
+  50% {
+    transform: translate(578px, 300px) rotate(-45deg);
+  }
+  100% {
+    transform: translate(578px, 300px) rotate(-45deg);
+  }
+}
+
+@keyframes sync_line_2 {
+  0% {
+    transform: translate(400px, -500px) rotate(45deg);
+  }
+  50% {
+    transform: translate(-578px, 300px) rotate(45deg);
+  }
+  100% {
+    transform: translate(-578px, 300px) rotate(45deg);
+  }
+}
+
+.bg_stars {
+  position: absolute;
+  top: 24rem;
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  z-index: 0;
+}
+.stars_container {
+  position: relative;
+  height: 300px;
+  width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.stars {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 224px;
+  width: 1128px;
+  overflow: hidden;
+  mask-image: radial-gradient(
+    43.18% 100% at 50% 100%,
+    #e3efff 54.17%,
+    rgba(227, 239, 255, 0) 100%
+  );
+}
+
+.stars_inner {
+  position: absolute;
+  inset: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow:
+    50px 20px white,
+    100px 150px white,
+    150px 80px white,
+    200px 200px white,
+    250px 30px white,
+    300px 170px white,
+    350px 50px white,
+    400px 120px white,
+    450px 90px white,
+    500px 180px white,
+    550px 40px white,
+    600px 160px white,
+    650px 70px white,
+    700px 130px white,
+    750px 100px white,
+    800px 190px white,
+    850px 60px white,
+    900px 140px white,
+    950px 110px white,
+    1000px 25px white,
+    1050px 175px white,
+    1100px 85px white;
+  animation: stars 10s linear infinite;
+}
+
+@keyframes stars {
+  0% {
+    transform: translateY(224px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-198.529px);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,113 @@
+.card {
+  position: relative;
+  width: 360px;
+  height: 500px;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 2px solid var(--color-light-dark);
+}
+
+.background {
+  position: absolute;
+  background-color: #000000de;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  padding: 2rem;
+  height: 100%;
+  color: #ffffff;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content span {
+  text-transform: uppercase;
+  color: var(--color-dark-gray);
+  font-size: 1.75rem;
+}
+
+.content h2 {
+  text-transform: uppercase;
+  font-size: 3.625rem;
+  margin: 1rem 0;
+}
+
+.content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.content ul li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1.125rem;
+}
+
+.content a {
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(
+    --color-dark-skeleton
+  ); /* Color gris para el skeleton */
+  z-index: 3; /* Encima del contenido inicialmente */
+  pointer-events: none; /* Permite clics a través del overlay */
+  background: linear-gradient(
+    90deg,
+    var(--color-dark-skeleton),
+    var(--color-light-skeleton),
+    var(--color-dark-skeleton)
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+/* Opcional: Simular líneas de skeleton */
+.overlay::before {
+  content: "";
+  position: absolute;
+  top: 2.3rem;
+  left: 2rem;
+  width: 210px;
+  height: 1.75rem;
+  border-radius: 0.2rem;
+  background-color: var(--color-light-skeleton);
+}
+
+.overlay::after {
+  content: "";
+  position: absolute;
+  top: 7.5rem;
+  left: 2rem;
+  width: 240px;
+  height: 3.625rem;
+  border-radius: 0.2rem;
+  background-color: var(--color-light-skeleton);
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
