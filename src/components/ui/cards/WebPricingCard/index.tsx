@@ -38,6 +38,15 @@ export default component$(() => {
   return (
     <div class={styles.card} ref={cardRef}>
       <div class={styles.background}></div>
+      <div class={styles.bg_stars}>
+        <div class={styles.stars_container}>
+          <div class={styles.stars}>
+            <div class={styles.stars_inner}>
+              <div class={styles.star}></div>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* Contenido real de la tarjeta */}
       <div class={styles.content} ref={contentRef}>
         <span>LANDING PAGE</span>

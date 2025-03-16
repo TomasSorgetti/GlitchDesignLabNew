@@ -4,9 +4,13 @@
   height: 500px;
   border-radius: 1rem;
   overflow: hidden;
-  border: 2px solid var(--color-light-dark);
+  border: 1px solid var(--color-light-dark);
+  cursor: pointer;
+  transition: all 0.45s ease-in-out;
 }
-
+.card:hover {
+  border: 1px solid #8903ff41;
+}
 .background {
   position: absolute;
   background-color: #000000de;
@@ -109,5 +113,88 @@
   }
   100% {
     background-position: -200% 0;
+  }
+}
+
+.bg_stars {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.stars_container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.stars {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 224px;
+  width: 1128px;
+  overflow: hidden;
+  mask-image: radial-gradient(
+    43.18% 100% at 50% 100%,
+    #e3efff 54.17%,
+    rgba(227, 239, 255, 0) 100%
+  );
+}
+
+.stars_inner {
+  position: absolute;
+  inset: 0;
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  box-shadow:
+    50px 20px white,
+    100px 150px white,
+    150px 80px white,
+    200px 200px white,
+    250px 30px white,
+    300px 170px white,
+    350px 50px white,
+    400px 120px white,
+    450px 90px white,
+    500px 180px white,
+    550px 40px white,
+    600px 160px white,
+    650px 70px white,
+    700px 130px white,
+    750px 100px white,
+    800px 190px white,
+    850px 60px white,
+    900px 140px white,
+    950px 110px white,
+    1000px 25px white,
+    1050px 175px white,
+    1100px 85px white;
+  opacity: 0;
+  visibility: hidden;
+}
+.card:hover .star {
+  animation: stars 5s linear infinite;
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes stars {
+  0% {
+    transform: translateY(180px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-198.529px);
+    opacity: 0;
   }
 }

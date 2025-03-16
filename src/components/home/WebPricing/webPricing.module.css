@@ -6,9 +6,9 @@
   gap: 8rem;
   padding-top: 24rem;
   background-image: url("../../../assets/images/web_pricing/bg.png");
-  background-size: contain;
   background-position: left 0 top 0;
   background-repeat: no-repeat;
+  margin-top: 4rem;
 }
 .content {
   display: flex;
@@ -29,7 +29,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   z-index: 3;
 }
 .cardsContainer::before {
@@ -107,7 +107,7 @@
   position: absolute;
   top: 100px;
   left: 0;
-  animation: 12s linear infinite;
+  animation: 8s linear infinite;
   background: linear-gradient(
     to bottom,
     #00000018,
@@ -124,7 +124,7 @@
 .sync_line:nth-child(2) div {
   transform: translate(400px, -500px) rotate(45deg);
   animation-name: sync_line_2 !important;
-  animation-delay: 6s;
+  animation-delay: 4s;
 }
 
 @keyframes sync_line_1 {
@@ -151,79 +151,60 @@
   }
 }
 
-.bg_stars {
+.glitch {
+  display: flex;
+  justify-content: center;
   position: absolute;
-  top: 24rem;
-  width: 100%;
-  max-width: 800px;
-  height: 300px;
-  z-index: 0;
+  top: 10rem;
 }
-.stars_container {
+.logo {
   position: relative;
-  height: 300px;
-  width: 700px;
-  margin: 0 auto;
+  width: 600px;
+  height: 219.87px;
+  background-image: url("../../../assets/images/web_pricing/glitch.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   overflow: hidden;
 }
-.stars {
+.logo_background_image_maskImage {
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+.logo.logo_background_image_maskImage {
+  -webkit-mask-image: url("../../../assets/images/web_pricing/glitch.png");
+  mask-image: url("../../../assets/images/web_pricing/glitch.png");
+}
+.logo_background_image {
+  transition: 1s cubic-bezier(0.6, 0.6, 0, 1) opacity;
+}
+.logo div {
+  width: 700px;
+  height: 300px;
+  border-radius: 100%;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 224px;
-  width: 1128px;
-  overflow: hidden;
-  mask-image: radial-gradient(
-    43.18% 100% at 50% 100%,
-    #e3efff 54.17%,
-    rgba(227, 239, 255, 0) 100%
+  top: 100px;
+  left: 0;
+  animation: 6s linear infinite;
+  background: linear-gradient(
+    to right,
+    #00000018,
+    var(--color-primary),
+    var(--color-secondary),
+    #f469e11c
   );
 }
-
-.stars_inner {
-  position: absolute;
-  inset: 0;
+.logo div {
+  transform: translate(-1000px, -160px);
+  animation-name: glitch-animation !important;
 }
 
-.star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
-  box-shadow:
-    50px 20px white,
-    100px 150px white,
-    150px 80px white,
-    200px 200px white,
-    250px 30px white,
-    300px 170px white,
-    350px 50px white,
-    400px 120px white,
-    450px 90px white,
-    500px 180px white,
-    550px 40px white,
-    600px 160px white,
-    650px 70px white,
-    700px 130px white,
-    750px 100px white,
-    800px 190px white,
-    850px 60px white,
-    900px 140px white,
-    950px 110px white,
-    1000px 25px white,
-    1050px 175px white,
-    1100px 85px white;
-  animation: stars 10s linear infinite;
-}
-
-@keyframes stars {
+@keyframes glitch-animation {
   0% {
-    transform: translateY(224px);
-    opacity: 1;
+    transform: translate(-1000px, -160px);
   }
+
   100% {
-    transform: translateY(-198.529px);
-    opacity: 0;
+    transform: translate(600px, -160px);
   }
 }

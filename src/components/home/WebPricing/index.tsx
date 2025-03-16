@@ -27,6 +27,13 @@ export default component$(() => {
 
   return (
     <section class={styles.container}>
+      <div class={styles.glitch}>
+        <div
+          class={`${styles.logo} ${styles.logo_background_image} ${styles.logo_background_image_maskImage} ${styles.logo_background_image_loaded}`}
+        >
+          <div></div>
+        </div>
+      </div>
       <div class={styles.background}>
         <div class={styles.sync_lines}>
           <div
@@ -39,15 +46,6 @@ export default component$(() => {
             class={`${styles.sync_line} ${styles.lazy_background_image} ${styles.lazy_background_image_maskImage} ${styles.lazy_background_image_loaded}`}
           >
             <div></div>
-          </div>
-        </div>
-      </div>
-      <div class={styles.bg_stars}>
-        <div class={styles.stars_container}>
-          <div class={styles.stars}>
-            <div class={styles.stars_inner}>
-              <div class={styles.star}></div>
-            </div>
           </div>
         </div>
       </div>
